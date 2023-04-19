@@ -20,7 +20,7 @@ export let CANCIONES = [
       start: 0,
       end: 333,
     },
-    url: `./public/songs/track.mp3`,
+    url: `/songs/track.mp3`,
   },
   {
     _id: 2,
@@ -37,7 +37,7 @@ export let CANCIONES = [
       start: 0,
       end: 333,
     },
-    url: `./public/songs/track-1.mp3`,
+    url: `/songs/track-1.mp3`,
   },
   {
     _id: 3,
@@ -54,7 +54,7 @@ export let CANCIONES = [
       start: 0,
       end: 333,
     },
-    url: `./public/songs/track-2.mp3`,
+    url: `/songs/track-2.mp3`,
   },
   {
     _id: 4,
@@ -71,7 +71,7 @@ export let CANCIONES = [
       start: 0,
       end: 333,
     },
-    url: `./public/songs/track-4.mp3`,
+    url: `/songs/track-4.mp3`,
   },
   {
     _id: 5,
@@ -87,7 +87,7 @@ export let CANCIONES = [
       start: 0,
       end: 333,
     },
-    url: `./public/songs/track-3.mp3`,
+    url: `/songs/track-3.mp3`,
   },
   {
     _id: 6,
@@ -104,7 +104,7 @@ export let CANCIONES = [
       start: 0,
       end: 333,
     },
-    url: `./public/songs/track-5.mp3`,
+    url: `/songs/track-5.mp3`,
   },
   {
     _id: 7,
@@ -120,7 +120,7 @@ export let CANCIONES = [
       start: 0,
       end: 333,
     },
-    url: `./public/songs/track-6.mp3`,
+    url: `/songs/track-6.mp3`,
   },
   {
     _id: 8,
@@ -136,7 +136,7 @@ export let CANCIONES = [
       start: 0,
       end: 333,
     },
-    url: `./public/songs/track-7.mp3`,
+    url: `/songs/track-7.mp3`,
   },
   {
     _id: 9,
@@ -152,7 +152,7 @@ export let CANCIONES = [
       start: 0,
       end: 333,
     },
-    url: `./public/songs/track-7.mp3`,
+    url: `/songs/track-7.mp3`,
   },
 ];
 
@@ -224,7 +224,7 @@ let INTERVALO;
 
 export const pause = () => {
   audio$$.pause();
-  state$$.src = "./public/assets/play.svg";
+  state$$.src = "/assets/play.svg";
   PLAYING = false;
   clearInterval(INTERVALO);
 };
@@ -237,7 +237,7 @@ export const play = () => {
     end$$.textContent = ("0" + audio$$.duration / 60).slice(0,5).replace(".", ":");
   }, 1000);
   audio$$.play();
-  state$$.src = "./public/assets/pause.svg";
+  state$$.src = "/assets/pause.svg";
   PLAYING = true;
 };
 
@@ -247,11 +247,11 @@ const changeVolume = (e) => {
   dato$$.textContent = e.target.value + "%";
 
   if (VOLUMEN === 0) {
-    imgVolumen$$.src = "./public/assets/volume-x.svg";
+    imgVolumen$$.src = "/assets/volume-x.svg";
   } else if (VOLUMEN < 0.5) {
-    imgVolumen$$.src = "./public/assets/volume-low.svg";
+    imgVolumen$$.src = "/assets/volume-low.svg";
   } else {
-    imgVolumen$$.src = "./public/assets/volume.svg";
+    imgVolumen$$.src = "/assets/volume.svg";
   }
 };
 
@@ -272,9 +272,9 @@ const mute = () => {
   }
 
   if (VOLUMEN === 0) {
-    imgVolumen$$.src = "./public/assets/volume-x.svg";
+    imgVolumen$$.src = "/assets/volume-x.svg";
   } else {
-    imgVolumen$$.src = "./public/assets/volume.svg";
+    imgVolumen$$.src = "/assets/volume.svg";
   }
 };
 
